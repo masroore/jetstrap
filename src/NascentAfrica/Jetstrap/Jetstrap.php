@@ -10,11 +10,11 @@ class Jetstrap
     protected $presets = '';
 
     /**
-     * Use Core Ui presets
+     * Use Core Ui presets.
      *
      * @return $this
      */
-    public function useCoreUi3(): Jetstrap
+    public function useCoreUi3(): self
     {
         $this->presets = Presets::CORE_UI_3;
 
@@ -22,11 +22,11 @@ class Jetstrap
     }
 
     /**
-     * Use Core Ui presets
+     * Use Core Ui presets.
      *
      * @return $this
      */
-    public function useAdminLte3(): Jetstrap
+    public function useAdminLte3(): self
     {
         $this->presets = Presets::ADMIN_LTE_3;
 
@@ -34,12 +34,12 @@ class Jetstrap
     }
 
     /**
-     * Get preset name
+     * Get preset name.
      *
      * @return false|string
      */
     public function getPreset()
     {
-        return $this->presets === '' ? false : $this->presets;
+        return '' === $this->presets ? false : $this->presets;
     }
 }

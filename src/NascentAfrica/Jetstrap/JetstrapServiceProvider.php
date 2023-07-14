@@ -14,7 +14,7 @@ class JetstrapServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind('jetstrap', function ($app) {
-            return new Jetstrap;
+            return new Jetstrap();
         });
     }
 
@@ -36,12 +36,12 @@ class JetstrapServiceProvider extends ServiceProvider
      */
     protected function configurePublishing()
     {
-        if (! $this->app->runningInConsole()) {
+        if (!$this->app->runningInConsole()) {
             return;
         }
 
         $this->publishes([
-            __DIR__ . '/../../../resources/views' => resource_path('views/vendor/jetstream'),
+            __DIR__.'/../../../resources/views' => resource_path('views/vendor/jetstream'),
         ], 'jetstrap-views');
     }
 
@@ -52,7 +52,7 @@ class JetstrapServiceProvider extends ServiceProvider
      */
     protected function configureCommands()
     {
-        if (! $this->app->runningInConsole()) {
+        if (!$this->app->runningInConsole()) {
             return;
         }
 
